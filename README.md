@@ -7,7 +7,7 @@ Build an app or service that can recieve a github repo web hook from a commit an
 # Requirements
 * Whatever language you are comfortable using
 * Maintain your code in this repo
-* Leverage http://shields.io ![](https://img.shields.io/badge/raml-verified-green.svg)
+* Leverage http://shields.io ![](https://img.shields.io/badge/RAML-verified-green.svg)
 
 # Bonus
 * Parse multiple RAML files per repo. Each file having a distinct "baseURI". Essentially one badge respresenting the endpoint tested on each specific environment (dev, staging, production, etc.) 
