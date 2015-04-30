@@ -35,7 +35,7 @@ Github repo hook to validate a RAML file, test endpoints and produce a badge png
 * Do some scratching
 * Implement PORO classes to do problem statement work
     * TDD?
-* Build out web service (Rails? Sinatra?)
+* Build out web servi (Rails? Sinatra?)
 * Deploy to web faction (or somewhere public)
     * How about just figuring out how to use `ngrok`?
 * Implement bonus items …
@@ -68,4 +68,7 @@ Github repo hook to validate a RAML file, test endpoints and produce a badge png
 * [NationBuilder Webhooks - Brad Johnson](http://www.bradleymosesjohnson.com/blog/2013/11/13/nationbuilder-webhooks/)
 * [Sinatra](http://www.sinatrarb.com/)
 * [Using Webhooks with Rails - Stack Overflow](http://stackoverflow.com/questions/21219313/using-webhooks-with-rails)
+* [Sinatra: Configuring Settings](http://www.sinatrarb.com/configuration.html)
+* [ngrok](https://www.npmjs.com/package/ngrok)
+* [ngrok - download](https://ngrok.com/download)
 * 
