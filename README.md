@@ -31,7 +31,7 @@ Github repo hook to validate a RAML file, test endpoints and produce a badge png
 * R&D Github web hooks
 * R&D RAML
 * R&D `shields.io` usage
-* Setup `gitflow`
+* Setup `gitflow` @done
 * Do some scratching
 * Implement PORO classes to do problem statement work
     * TDD?
