@@ -1,0 +1,6 @@
+%h1= @repository.name
+
+%ul
+  - @repository.commits.each do |commit|
+    %li
+      = commit.commit_sha

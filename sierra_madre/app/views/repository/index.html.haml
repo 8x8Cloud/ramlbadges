@@ -1,0 +1,14 @@
+%h1 Repositories
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Repository
+      %th Number of Commits
+  %tbody
+    - @repositories.each do |repo|
+      %tr
+        %td
+          = link_to repo.name, repo
+        %td
+          = repo.commits.size
