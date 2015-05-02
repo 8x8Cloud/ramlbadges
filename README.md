@@ -26,6 +26,7 @@ Github repo hook to validate a RAML file, test endpoints and produce a badge png
 ## Notes
 
 * It would be cool if this service could be configured to use any repository. Like, when someone installs it they can set their Git credentials and choose a repository to apply the Webhook to. This can be done through the Github Webhooks API.
+* **Sierra Madre** is a reference to the first movie to contain the phrase "Badges? We don't need no stinking badges!" (in a much longer [form](http://en.wikipedia.org/wiki/Stinking_badges).
 
 ## Todo
 * R&D Github web hooks
