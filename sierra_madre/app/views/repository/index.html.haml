@@ -4,11 +4,14 @@
   %thead
     %tr
       %th Repository
+      %th Owner
       %th Number of Commits
   %tbody
     - @repositories.each do |repo|
       %tr
         %td
           = link_to repo.name, repo
+        %td
+          = repo.owner_name
         %td
           = repo.commits.size
