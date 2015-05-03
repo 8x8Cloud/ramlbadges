@@ -1,2 +1,10 @@
-%h1 Commit#show
-%p Find me in app/views/commit/show.html.haml
+%h1 
+  Commit 
+  %small= @commit.commit_sha
+
+%ul
+  - @ramls.each do |raml|
+    %li
+      %a{:href => "#{raml['raw_url']}", target: "_blank"}
+        = raml['raw_url']
+

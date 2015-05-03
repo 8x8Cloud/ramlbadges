@@ -5,6 +5,9 @@ class CommitController < ApplicationController
   end
 
   def show
+    @commit = Commit.find params[:id]
+    @commit.fetch_github_commit
+    @ramls = @commit.find_raml_files
   end
 
   def create
@@ -13,16 +16,7 @@ class CommitController < ApplicationController
         Repository.create(repository_attributes)
 
     params[:commits].each do |commit|
-      added = commit[:added]
-      removed = commit[:removed]
-      modified = commit[:modified]
-
-      all_changes = [added, removed, modified]
-      all_changes = all_changes.compact.reduce([], :|)
-
-      raml_matches = all_changes.grep(/\.raml$/)
-
-      unless raml_matches.empty?
+      if raml_matches?(commit)
         @commit = Commit.create(repository: @repository, commit_sha: commit[:id])
       end
     end
@@ -42,5 +36,11 @@ class CommitController < ApplicationController
         url: params[:repository][:url],
         owner_name: params[:repository][:owner][:name]
       }
+    end
+
+  private
+    def raml_matches?(commit)
+      all_changes = [commit[:added], commit[:removed], commit[:modified]].compact.reduce([], :|)
+      all_changes.grep(/\.raml$/)
     end
 end
