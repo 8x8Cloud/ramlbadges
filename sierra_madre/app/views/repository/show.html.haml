@@ -3,4 +3,4 @@
 %ul
   - @repository.commits.each do |commit|
     %li
-      = commit.commit_sha
+      = link_to commit.commit_sha, commit

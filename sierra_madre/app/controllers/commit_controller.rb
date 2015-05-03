@@ -5,6 +5,9 @@ class CommitController < ApplicationController
   end
 
   def show
+    @commit = Commit.find params[:id]
+    @commit.fetch_github_commit
+    @ramls = @commit.find_raml_files
   end
 
   def create

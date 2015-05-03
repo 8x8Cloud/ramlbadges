@@ -10,12 +10,13 @@ class Commit < ActiveRecord::Base
 
   def find_raml_files
     files = @commit_body['files']
-    @ramls = []
+    ramls = []
     files.each do |file|
       matches = /\.raml$/.match(file['filename'])
       if matches
-        @ramls << file
+        ramls << file
       end
     end
+    ramls
   end
 end
