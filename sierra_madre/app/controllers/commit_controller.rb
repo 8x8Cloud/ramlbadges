@@ -39,7 +39,8 @@ class CommitController < ApplicationController
       { 
         github_id: params[:repository][:id],
         name: params[:repository][:name],
-        url: params[:repository][:url]
+        url: params[:repository][:url],
+        owner_name: params[:repository][:owner][:name]
       }
     end
 end
