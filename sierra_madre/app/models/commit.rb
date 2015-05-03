@@ -1,6 +1,8 @@
 class Commit < ActiveRecord::Base
   belongs_to :repository
 
+  default_scope { order(updated_at: :desc) }
+
   def fetch_github_commit
     @repo = self.repository
     commit_url = "https://api.github.com/repos/#{@repo.owner_name}/#{@repo.name}/commits/#{self.commit_sha}"
