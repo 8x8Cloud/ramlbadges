@@ -18,4 +18,11 @@ RSpec.describe Push do
     push = Push.new(raml_payload)
     expect(push).to have_raml
   end
+
+  it "returns the repository hash" do
+    push = Push.new(raml_payload)
+    payload = JSON.parse(raml_payload)
+    repository = payload["repository"]
+    expect(push.repository).to eq(repository)
+  end
 end

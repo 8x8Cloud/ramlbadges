@@ -1,8 +1,14 @@
 class Push
   attr_accessor :payload
 
+  attr_reader :repository
+
   def initialize(json = nil)
     @payload = JSON.parse(json)
+  end
+
+  def repository
+    @repository ||= @payload["repository"]
   end
 
   def has_raml?
