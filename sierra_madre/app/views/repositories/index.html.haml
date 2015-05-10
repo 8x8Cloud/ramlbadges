@@ -1,0 +1,19 @@
+%h1 Repositories
+
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Repository
+      %th Owner
+      %th Commits
+      %th
+    %tbody
+      %tr
+        - @repositories.each do |repository|
+          %td= repository.name
+          %td= repository.owner
+          %td= repository.commits.size
+          %td
+            = link_to "Show", repository
+            |
+            = link_to "Destroy", repository, method: :delete, data: { confirm: 'Are you sure you want to delete this repository?'}
