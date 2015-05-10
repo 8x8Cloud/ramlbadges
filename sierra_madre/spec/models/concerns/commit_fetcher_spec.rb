@@ -12,7 +12,7 @@ RSpec.describe CommitFetcher, type: :model do
 
   it "has the correct commit url" do
     commit_fetcher = CommitFetcher.new(commit.api_url)
-    test_api_url = "https://api.github.com/repos/baxterthehacker/commits/0d1a26e67d8f5eaf1f6ba5c57fc3c7d91ac0fd1c"
+    test_api_url = "https://api.github.com/repos/baxterthehacker/public-repo/commits/0d1a26e67d8f5eaf1f6ba5c57fc3c7d91ac0fd1c"
     expect(commit_fetcher.commit_url).to eq(test_api_url)
   end
 

@@ -2,7 +2,8 @@ class Push
   attr_reader :payload, :repository, :commit
 
   def initialize(payload)
-    @payload = JSON.parse(payload)
+    # @payload = JSON.parse(payload)
+    @payload = payload
     @repository = Repository.where(repository_attributes).first_or_create
     @commit = Commit.create(commit_attributes) if has_raml_files?
   end
@@ -31,14 +32,14 @@ class Push
     end
 
     def files_array
-      [head_commit["added"], head_commit["modified"]].flatten.compact
+      [head_commit[:added], head_commit[:modified]].flatten.compact
     end
 
     def head_commit
-      @payload["head_commit"]
+      @payload[:head_commit]
     end
 
     def repo
-      @payload["repository"]
+      @payload[:repository]
     end
 end

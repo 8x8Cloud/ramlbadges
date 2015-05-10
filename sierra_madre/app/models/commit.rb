@@ -6,6 +6,6 @@ class Commit < ActiveRecord::Base
   end
 
   def api_url
-    "https://api.github.com/repos/#{self.repository.owner}/commits/#{sha}"
+    "https://api.github.com/repos/#{self.repository.owner}/#{self.repository.name}/commits/#{sha}"
   end
 end

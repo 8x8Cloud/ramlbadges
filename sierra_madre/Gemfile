@@ -48,8 +48,9 @@ gem 'html2haml'
 gem 'haml-rails'
 group :development, :test do
   gem 'rspec-rails'
-  gem 'webmock'
 end
+
+gem 'webmock', group: :test
 
 gem 'factory_girl_rails'
 gem 'puma'

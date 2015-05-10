@@ -16,7 +16,6 @@ class CommitFetcher
   end
 
   def raw_file(filename)
-    # response = HTTParty.get selected(filename)["raw_url"]
     open(selected(filename)["raw_url"]).read
   end
 
