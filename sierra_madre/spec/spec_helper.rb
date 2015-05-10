@@ -16,6 +16,10 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -50,6 +54,12 @@ RSpec.configure do |config|
     # unless a formatter has already been configured
     # (e.g. via a command-line flag).
     config.default_formatter = 'doc'
+  end
+
+  config.before(:each) do
+    stub_request(:get, /api.github.com.*(commits)/)
+      .with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'})
+      .to_return(status: 200, body: File.open('spec/fixtures/commit_payload.json', 'r'), headers: {})
   end
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.

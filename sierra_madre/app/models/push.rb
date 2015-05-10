@@ -15,7 +15,8 @@ class Push
     def repository_attributes
       {
         name: repo["name"],
-        github_id: repo["id"]
+        github_id: repo["id"],
+        owner: repo["owner"]["name"]
       }
     end
 
