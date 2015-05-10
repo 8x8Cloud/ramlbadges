@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :commits
+
   resources :repositories
 
   post 'push/create'
