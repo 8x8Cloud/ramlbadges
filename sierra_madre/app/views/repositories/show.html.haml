@@ -1,0 +1,16 @@
+%h1
+  Commits for
+  = @repository.name
+
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Commit Message
+      %th Github Commit Link
+      %th Number of RAML Files
+    %tbody
+      - @repository.commits.each do |commit|
+        %tr
+          %td= commit.message
+          %td= link_to commit.sha, commit.url, target: "_blank"
+          %td= commit.files.size
