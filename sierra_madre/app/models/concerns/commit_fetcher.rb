@@ -1,3 +1,4 @@
+require 'open-uri'
 class CommitFetcher
   attr_reader :commit_url, :commit
 
@@ -11,17 +12,22 @@ class CommitFetcher
   end
 
   def file(filename)
-    selected = @commit["files"].select { |f| f["name"] == filename }
-    selected.first
+    selected(filename)
   end
 
-  # def raw_file(filename)
-    
-  # end
+  def raw_file(filename)
+    # response = HTTParty.get selected(filename)["raw_url"]
+    open(selected(filename)["raw_url"]).read
+  end
 
   private
     def get_commit
       response = HTTParty.get @commit_url
       JSON.parse response.body
+    end
+
+    def selected(filename)
+      select_result = @commit["files"].select { |f| f["name"] == filename }
+      select_result.first
     end
 end

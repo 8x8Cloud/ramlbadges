@@ -60,6 +60,9 @@ RSpec.configure do |config|
     stub_request(:get, /api.github.com.*(commits)/)
       .with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'})
       .to_return(status: 200, body: File.open('spec/fixtures/commit_payload.json', 'r'), headers: {})
+    stub_request(:get, "https://github.com/octocat/Hello-World/raw/7ca483543807a51b6079e54ac4cc392bc29ae284/test_raml.raml").
+         with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'}).
+         to_return(:status => 200, :body => File.open('spec/fixtures/test_raml.raml'), :headers => {})
   end
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
