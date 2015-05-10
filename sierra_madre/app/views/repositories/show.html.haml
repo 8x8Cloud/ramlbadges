@@ -11,6 +11,7 @@
     %tbody
       - @repository.commits.each do |commit|
         %tr
-          %td= commit.message
+          %td
+            = link_to commit.message, commit
           %td= link_to commit.sha, commit.url, target: "_blank"
           %td= commit.files.size

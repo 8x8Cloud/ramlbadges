@@ -8,7 +8,6 @@ class CommitFetcher
   end
 
   def files
-    puts @commit["files"]
     @commit["files"].select { |f| /\.raml$/ =~ f["filename"] }
   end
 
@@ -27,7 +26,7 @@ class CommitFetcher
     end
 
     def selected(filename)
-      select_result = @commit["files"].select { |f| f["filename"] == filename }
+      select_result = @commit["files"].select { |f| f["filename"].include?(filename) }
       select_result.first
     end
 end

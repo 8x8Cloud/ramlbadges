@@ -31,12 +31,12 @@ RSpec.describe CommitFetcher, type: :model do
     end
 
     it "returns a file hash when given a filename" do
-      expect(commit_fetcher.file(test_file["name"])).to eq test_file
+      expect(commit_fetcher.file(test_file["filename"])).to eq test_file
     end
 
     it "returns a raw file when given a filename" do
       test_raw_file = File.open('spec/fixtures/test_raml.raml', 'r').read
-      expect(commit_fetcher.raw_file(test_file["name"])).to eq test_raw_file
+      expect(commit_fetcher.raw_file(test_file["filename"])).to eq test_raw_file
     end
   end
 end
