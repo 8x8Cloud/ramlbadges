@@ -7,7 +7,7 @@ The first movie to use this phrase (albeit a longer version) was [Sierra Madre][
 # Up and running in 5 minutes
 
 1. Clone this repo
-2. Fill in your Github credentials in `secrets.yml` **prevents API rate limiting*
+2. Fill in your Github credentials in `secrets.yml` prevents API rate limiting*
     * `username: [YOUR GITHUB USERNAME]`
     * `password: [YOUR GITHUB PASSWORD`
 3. Migrate your database
