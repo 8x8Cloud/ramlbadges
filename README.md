@@ -28,4 +28,8 @@ The first movie to use this phrase (albeit a longer version) was [Sierra Madre][
 8. Push a commit that adds or modified a `.raml` file
 9. See your RAML file's valid status and documentation ... like a ***boss***!!
 
+# Tests
+
+The tests for this app were built using `rspec`. In order to run them, just type `rspec` at the command line after cloning the repo.
+
 [1]:http://en.wikipedia.org/wiki/Stinking_badges
