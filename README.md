@@ -50,4 +50,4 @@ The tests for this app were built using `rspec`. In order to run them, just type
 
 [1]:http://en.wikipedia.org/wiki/Stinking_badges
 [2]:https://ngrok.com/
-[3]:
+[3]:https://www.npmjs.com/package/raml2html
