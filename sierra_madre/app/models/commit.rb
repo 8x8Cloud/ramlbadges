@@ -1,6 +1,8 @@
 class Commit < ActiveRecord::Base
   belongs_to :repository
 
+  default_scope { order(created_at: :desc) }
+
   def fetched_commit
     CommitFetcher.new(self.api_url)
   end

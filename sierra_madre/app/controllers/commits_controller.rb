@@ -1,6 +1,6 @@
 class CommitsController < ApplicationController
   def index
-    @commits = Commit.order(created_at: :desc).all
+    @commits = Commit.all
   end
 
   def show
