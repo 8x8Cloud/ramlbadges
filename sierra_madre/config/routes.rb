@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :commits
+  resources :commits do
+    get 'raw_file'
+  end
 
   resources :repositories
 

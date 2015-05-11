@@ -14,6 +14,6 @@
           %td= repository.owner
           %td= repository.commits.size
           %td
-            = link_to "Show", repository
-            |
-            = link_to "Destroy", repository, method: :delete, data: { confirm: 'Are you sure you want to delete this repository?'}
+            .btn-group{role: "group", "aria-label" => "..."}
+              = link_to "Show", repository, class: "btn btn-primary"
+              = link_to "Destroy", repository, method: :delete, data: { confirm: 'Are you sure you want to delete this repository?'}, class: "btn btn-warning"

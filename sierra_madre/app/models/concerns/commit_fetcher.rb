@@ -15,6 +15,10 @@ class CommitFetcher
     selected(filename)
   end
 
+  def raw_url(filename)
+    selected(filename)["raw_url"]
+  end
+
   def raw_file(filename)
     open(selected(filename)["raw_url"]).read
   end

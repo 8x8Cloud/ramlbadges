@@ -6,4 +6,11 @@ class CommitsController < ApplicationController
   def show
     @commit = Commit.find params[:id]
   end
+
+  def raw_file
+    @commit = Commit.find params[:commit_id]
+    respond_to do |format|
+      format.html { render layout: "raw_file" }
+    end
+  end
 end
