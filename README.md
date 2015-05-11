@@ -32,4 +32,13 @@ The first movie to use this phrase (albeit a longer version) was [Sierra Madre][
 
 The tests for this app were built using `rspec`. In order to run them, just type `rspec` at the command line after cloning the repo.
 
+# TODO
+
+* Complete code coverage
+    - The last few iterations were done cowboy style (to get the app ready for the 8x8 crew) so there is some untested code.
+* Test views
+* Test unhappy paths
+    - I focused on only testing the happy path during TDD.
+    - There are *lots* of places where errors can cause problems and no tests for these edge cases have been written.
+
 [1]:http://en.wikipedia.org/wiki/Stinking_badges
