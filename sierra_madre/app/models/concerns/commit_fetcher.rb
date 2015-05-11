@@ -25,7 +25,11 @@ class CommitFetcher
 
   private
     def get_commit
-      response = HTTParty.get @commit_url
+      auth = { 
+        username: Rails.application.secrets["github_username"], 
+        password: Rails.application.secrets["github_password"] 
+      }
+      response = HTTParty.get @commit_url, basic_auth: auth
       JSON.parse response.body
     end
 

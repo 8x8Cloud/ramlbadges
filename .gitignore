@@ -35,3 +35,4 @@ build/
 .rvmrc
 .DS_Store
 # /sierra_madre/
+/sierra_madres/config/secrets.yml

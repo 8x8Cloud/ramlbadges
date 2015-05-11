@@ -14,7 +14,8 @@
       %tr
         %td= f["filename"]
         %td
-          = link_to "View Docs", commit_raw_file_path(@commit, {filename: f["filename"]}), target: "_blank"
+          - if raml2html(f["filename"])
+            = link_to "View Docs", commit_raw_file_path(@commit, {filename: f["filename"]}), target: "_blank"
         %td
           - if raml2html(f["filename"])
             = image_tag "https://img.shields.io/badge/Valid%20RAML%3F-true-brightgreen.svg"
