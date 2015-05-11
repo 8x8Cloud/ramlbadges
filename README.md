@@ -14,13 +14,13 @@ The first movie to use this phrase (albeit a longer version) was [Sierra Madre][
 # Up and running in 10 easy steps
 
 1. Clone this repo
-2. Fill in your Github credentials in `secrets.yml` *prevents API rate limiting*
+2. Fill in your Github credentials in `secrets.yml` (*prevents API rate limiting*)
     * `username: [YOUR GITHUB USERNAME]`
     * `password: [YOUR GITHUB PASSWORD`
 3. `bundle install`
 4. `rake db:migrate`
 5. `rails s -b 127.0.0.1`
-    * The `-b` is used for `ngrok` to bind properly.
+    * The `-b` is used so `ngrok` can bind properly.
 6. Start `ngrok`
     * `ngrok 3000`
 7. Grab your `ngrok` **Forwarding** URL
@@ -31,7 +31,7 @@ The first movie to use this phrase (albeit a longer version) was [Sierra Madre][
     * Select **Just the `push` event**
     * Check the **Active** checkbox
     * Click **Update webhook**
-9. Push a commit that adds or modified a `.raml` file
+9. Push a commit that adds or modifies a `.raml` file
 10. See your RAML file's valid status and documentation ... like a ***boss***!!
 
 # Tests
